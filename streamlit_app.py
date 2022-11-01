@@ -21,7 +21,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 with st.echo(code_location='below'):
     file = st.file_uploader(label="hello")
-    temp = tempfile.NamedTemporaryFile(mode="wd")
+    temp = tempfile.NamedTemporaryFile(mode="wb")
     bytes_data = files.getvalue()
     temp.write(bytes_data)
     
