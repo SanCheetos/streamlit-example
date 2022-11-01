@@ -25,4 +25,4 @@ with st.echo(code_location='below'):
     bytes_data = file.getvalue()
     temp.write(bytes_data)
     
-    cv2.imread(tepm.name)
+    cv2.imread(temp.name)
