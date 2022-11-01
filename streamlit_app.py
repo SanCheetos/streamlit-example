@@ -3,6 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+import cv2
 
 """
 # Welcome to Streamlit!
@@ -18,4 +19,4 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 with st.echo(code_location='below'):
     file = st.file_uploader(label="hello")
-    st.image(file)
+    sv2.imgread(file)
