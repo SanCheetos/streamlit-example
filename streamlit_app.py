@@ -22,7 +22,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 with st.echo(code_location='below'):
     file = st.file_uploader(label="hello")
     temp = tempfile.NamedTemporaryFile(mode="wb")
-    bytes_data = files.getvalue()
+    bytes_data = file.getvalue()
     temp.write(bytes_data)
     
     cv2.imread(tepm.name)
