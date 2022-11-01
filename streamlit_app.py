@@ -18,4 +18,4 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 with st.echo(code_location='below'):
     file = st.file_uploader(label="hello")
-    print(file)
+    st.image(file)
