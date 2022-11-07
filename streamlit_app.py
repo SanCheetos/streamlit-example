@@ -1,28 +1,27 @@
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
 import streamlit as st
-import tempfile
-import cv2
+import requests
+import pandas as pd
 
-"""
-# Welcome to Streamlit!
+@st.cache(ttl=60*60*12, allow_output_mutation=True)
+def fetch_emojis():
+    resp = requests.get(
+        'https://raw.githubusercontent.com/omnidan/node-emoji/master/lib/emoji.json')
+    json = resp.json()
+    codes, emojis = zip(*json.items())
+    return pd.DataFrame({
+        'Emojis': emojis,
+        'Shortcodes': [f':{code}:' for code in codes],
+    })
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
+'''
+# Streamlit emoji shortcodes
+Below are all the emoji shortcodes supported by Streamlit.
+Shortcodes are a way to enter emojis using pure ASCII. So you can type this `:smile:` to show this
+:smile:.
+(Keep in mind you can also enter emojis directly as Unicode in your Python strings too — you don't
+*have to* use a shortcode)
+'''
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+emojis = fetch_emojis()
 
-In the meantime, below is an example of what you can do with just a few lines of code:
-"""
-
-
-
-with st.echo(code_location='below'):
-    file = st.file_uploader(label="hello")
-    temp = tempfile.NamedTemporaryFile(mode="wb")
-    bytes_data = file.getvalue()
-    temp.write(bytes_data)
-    
-    cv2.imread(temp.name)
+st.table(emojis)
