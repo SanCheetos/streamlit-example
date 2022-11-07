@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-st.checkbox(":red_circle:")
+st.checkbox("🔴")
 @st.cache(ttl=60*60*12, allow_output_mutation=True)
 def fetch_emojis():
     resp = requests.get(
