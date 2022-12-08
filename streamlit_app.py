@@ -82,4 +82,4 @@ KEY_FIREBASE = '{ "type": "service_account", "project_id": "streamlit-sst-sum", 
 yo = json.loads(KEY_FIREBASE)
 st.write(yo)
 st.write(json.loads(st.secrets["KEY_FIREBASE"]))
-#getAnalitics()
+getAnalitics()
