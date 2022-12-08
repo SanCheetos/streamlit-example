@@ -28,7 +28,7 @@ def getAnalitics():
                               (df["Деньги"] == 0) & 
                               (df["Даты"] == 0))
     
-    fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(25, 5))
+    fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, ncols=1)
     
     #Гистограмма для чекбоксов (одна, по y  доля использований, по x все чекбоксы)
     ax1.bar(['Имена','Организации', 'Локации', 'Деньги', 'Даты', 'Без выделений'], height=[(sum(df["Имена"] == 1)/len(df)) * 100, 
