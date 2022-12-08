@@ -1,6 +1,4 @@
-altair
 pandas
 streamlit
-cvlib
 matplotlib
-opencv-python-headless
+firebase-admin
